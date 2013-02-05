@@ -74,7 +74,8 @@ Informace o rozvrhu osoby specifikovane {username}.
 GET /kos/person/{username}/timetable
 < 200
 < Content-Type: application/json; charset=utf-8
-  [
+{ 
+  "timetableEntries": [
     {
       "id" : "1",
       "day": "monday",
@@ -107,6 +108,7 @@ GET /kos/person/{username}/timetable
       }
     }
   ]
+}
 +++++
 < 401
 +++++
@@ -122,8 +124,9 @@ Všechny POI pro zobrazení na mapě.
 GET /map/pois/
 < 200
 < Content-Type: application/json; charset=utf-8
-
-[
+{
+"pois": [
+  
   {
     "id" : 1,
     "name" : "FEL Karlovo náměstí",
@@ -134,7 +137,8 @@ GET /map/pois/
     },
     "planId" : "1"
   }
-]
+  ]
+}
 
 +++++
 < 401
@@ -145,8 +149,8 @@ POI pro zobrazení na mapě podle typu. Jednotlivé typy oddělené čárkou.
 GET /map/pois/{types}
 < 200
 < Content-Type: application/json; charset=utf-8
-
-[
+{
+"pois": [
   {
     "id" : 1,
     "name" : "FEL Karlovo náměstí",
@@ -158,7 +162,7 @@ GET /map/pois/{types}
     "planId" : "1"
   }
 ]
-
+}
 +++++
 < 401
 +++++
