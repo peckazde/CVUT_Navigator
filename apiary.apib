@@ -149,9 +149,23 @@ GET /map/plan/{id}
   "name" : "FIT Dejvice",
   "date" : 123456789,
   "tiles" : "http://navigator.cvut.cz/data/map/plan/456.zip"
+
   "floors" : [
     {
       "floor" : "1",
+      "constrains" : 
+      {
+        "southWest":
+        {
+          "latitude": 50.076534 ,
+          "longitude": 14.417152
+        },
+        "northEast":
+        {
+          "latitude": 50.077194,
+          "longitude": 14.418526
+        }
+      },
       "nodes" : [
       {
         "id" : "123",
@@ -191,6 +205,59 @@ GET /map/plan/{id}
          },
          "markerId" : 10
       } 
+      ]
+    }
+  ]
+}
++++++
+< 401
++++++
+< 404
+
+GET /map/plan/1
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "1",
+  "name" : "FEL Karlovo náměstí",
+  "date" : 123456789,
+  "tiles" : "http://navigator.cvut.cz/data/map/plan/1.zip"
+  "floors" : [
+    {
+      "floor" : "0",
+      "constrains" : 
+      {
+        "southWest":
+        {
+          "latitude": 50.076534 ,
+          "longitude": 14.417152
+        },
+        "northEast":
+        {
+          "latitude": 50.077194,
+          "longitude": 14.418526
+        }
+      },
+
+      "nodes" : [
+      {
+        "id" : "1",
+        "type" : "room",
+        "coordinates" : {
+          "latitude" : "50.076708",
+          "longitude" : "14.417570"
+         },
+        "markerId" : 1
+      },
+      {
+        "id" : "2",
+        "type" : "room",
+        "coordinates" : {
+          "latitude" : "50.076700",
+          "longitude" : "14.417570"
+         },
+        "markerId" : 2
+      },
       ]
     }
   ]
