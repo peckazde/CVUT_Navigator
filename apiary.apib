@@ -124,6 +124,7 @@ Všechny POI pro zobrazení na mapě.
 GET /map/pois/
 < 200
 < Content-Type: application/json; charset=utf-8
+{
 [
   {
     "id" : 1,
@@ -136,6 +137,7 @@ GET /map/pois/
     "planId" : "1"
   }
 ]
+}
  
 +++++
 < 401
@@ -146,6 +148,7 @@ POI pro zobrazení na mapě podle typu. Jednotlivé typy oddělené čárkou.
 GET /map/pois/{types}
 < 200
 < Content-Type: application/json; charset=utf-8
+{
 [
   {
     "id" : 1,
@@ -158,6 +161,7 @@ GET /map/pois/{types}
     "planId" : "1"
   }
 ]
+}
  
 +++++
 < 401
