@@ -120,19 +120,65 @@ Služby pracující s mapovými podklady
 Tato sekce služeb zprostředkovává data, pro práci s mapovými podklady
 --
 
+Všechny POI pro zobrazení na mapě. 
+GET /map/pois/
+< 200
+< Content-Type: application/json; charset=utf-8
+[
+  {
+    "id" : 1,
+    "name" : "FEL Karlovo náměstí",
+    "type" : "building",
+    "coordinates" : {
+      "latitude" : "50.076866",
+      "longitude" : "14.417839"
+    },
+    "planId" : "1"
+  }
+]
+ 
++++++
+< 401
++++++
+< 404
+
+POI pro zobrazení na mapě podle typu. Jednotlivé typy oddělené čárkou.
+GET /map/pois/{types}
+< 200
+< Content-Type: application/json; charset=utf-8
+[
+  {
+    "id" : 1,
+    "name" : "FEL Karlovo náměstí",
+    "type" : "building",
+    "coordinates" : {
+      "latitude" : "50.076866",
+      "longitude" : "14.417839"
+    },
+    "planId" : "1"
+  }
+]
+ 
++++++
+< 401
++++++
+< 404
+
+
+
 Informace o POI.
 GET /map/poi/{id}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "id" : 1,
-  "name" : "Dejvice",
-  "type" : "building",
-  "coordinates" : {
-    "latitude" : "50.1231",
-    "longitude" : "14.1231"
-  },
-  "planId" : "456"
+    "id" : 1,
+    "name" : "FEL Karlovo náměstí",
+    "type" : "building",
+    "coordinates" : {
+      "latitude" : "50.076866",
+      "longitude" : "14.417839"
+    },
+    "planId" : "1"
 }
 +++++
 < 401
