@@ -292,6 +292,13 @@ GET /map/plan/{id}
 +++++
 < 404
 
+/*
+  INSERT INTO node VALUES(1,'KN:E-022','room',50076708,14417670,0,0,0,1);
+INSERT INTO node VALUES(2,'KN:E-023','room',50076700,14417570,0,0,0,1);
+INSERT INTO node VALUES(3,'KN:E-024','room',50076685,14417418,0,0,0,1);
+INSERT INTO node VALUES(4,'KN:E-126','room',50076715,14417810,1,0,0,1);
+*/
+
 FEL Karlovo náměstí
 GET /map/plan/1
 < 200
@@ -321,20 +328,43 @@ GET /map/plan/1
       {
         "id" : "1",
         "type" : "room",
+        "name" : "KN:E-022",
         "coordinates" : {
           "latitude" : "50.076708",
-          "longitude" : "14.417570"
+          "longitude" : "14.417670"
          },
         "markerId" : 1
       },
       {
         "id" : "2",
         "type" : "room",
+        "name" : "KN:E-023",
         "coordinates" : {
           "latitude" : "50.076700",
           "longitude" : "14.417570"
          },
         "markerId" : 2
+      },
+      ,
+      {
+        "id" : "3",
+        "type" : "room",
+        "name" : "KN:E-024",
+        "coordinates" : {
+          "latitude" : "50.076685",
+          "longitude" : "14.417418"
+         },
+        "markerId" : 3
+      },
+      {
+        "id" : "4",
+        "type" : "room",
+        "name" : "KN:E-126",
+        "coordinates" : {
+          "latitude" : "50.076715",
+          "longitude" : "14.417810"
+         },
+        "markerId" : 4
       }
       ]
     }
