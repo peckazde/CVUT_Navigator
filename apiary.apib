@@ -495,16 +495,12 @@ GET /board/{courseCode}{?date}
   "boardEntries" : [
     {
       "id" : 1,
-      "user" : {
-        "id" : "1",
-        "username" : "peckazde",
-        "name" : "Zdeněk Pecka",
-        "email" : "peckazde@fit.cvut.cz",
-        "type" : "student",
-        "year" : "5"
-      },
-      "time" : 123456789,
-      "entry" : "Tohle je zprava"  
+      "title": "Title",
+      "text": "message",
+      "author" : "peckazde"
+      "eventDate" : 123456789,
+      "visible" : "true",
+      "lastChange" : 123456789
     }
   ]
 }
@@ -526,16 +522,12 @@ GET /board/{courseCode}/{timeTableEntrIid}{?date}
   "boardEntries" : [
     {
       "id" : 1,
-      "user" : {
-        "id" : "1",
-        "username" : "peckazde",
-        "name" : "Zdeněk Pecka",
-        "email" : "peckazde@fit.cvut.cz",
-        "type" : "student",
-        "year" : "5"
-      },
-      "time" : 123456789,
-      "entry" : "Tohle je zprava"  
+      "title": "Title",
+      "text": "message",
+      "author" : "peckazde"
+      "eventDate" : 123456789,
+      "visible" : "true",
+      "lastChange" : 123456789
     }
   ]
 }
@@ -558,17 +550,13 @@ GET /board/update{?date}
       "id" : 5,
       "boardEntries" : [
         {
-          "id" : 1,
-          "user" : {
-            "id" : "1",
-            "username" : "peckazde",
-            "name" : "Zdeněk Pecka",
-            "email" : "peckazde@fit.cvut.cz",
-            "type" : "student",
-            "year" : "5"
-          },
-          "time" : 123456789,
-          "entry" : "Tohle je zprava"  
+            "id" : 1,
+            "title": "Title",
+            "text": "message",
+            "author" : "peckazde"
+            "eventDate" : 123456789,
+            "visible" : "true",
+            "lastChange" : 123456789
         }
       ]
     }
@@ -587,16 +575,12 @@ PUT /board/{courseCode}/{messageId}
 > Content-Type: application/json
 {
     "id" : 1,
-    "user" : {
-        "id" : "1",
-        "username" : "peckazde",
-        "name" : "Zdeněk Pecka",
-        "email" : "peckazde@fit.cvut.cz",
-        "type" : "student",
-        "year" : "5"
-        },
-    "time" : 123456789,
-    "entry" : "Tohle je zprava"  
+    "title": "Title",
+    "text": "message",
+    "author" : "peckazde"
+    "eventDate" : 123456789,
+    "visible" : "true",
+    "lastChange" : 123456789
 }
 < 200
 +++++
@@ -612,16 +596,12 @@ PUT /board/{courseCode}/{timeTableEntrIid}/{messageId}
 > Content-Type: application/json
 {
     "id" : 1,
-    "user" : {
-        "id" : "1",
-        "username" : "peckazde",
-        "name" : "Zdeněk Pecka",
-        "email" : "peckazde@fit.cvut.cz",
-        "type" : "student",
-        "year" : "5"
-        },
-    "time" : 123456789,
-    "entry" : "Tohle je zprava"  
+    "title": "Title",
+    "text": "message",
+    "author" : "peckazde"
+    "eventDate" : 123456789,
+    "visible" : "true",
+    "lastChange" : 123456789
 }
 < 200
 +++++
@@ -636,17 +616,12 @@ Umožňuje přidávat příspěvky na nástěnku předmětu.
 POST /board/{courseCode}
 > Content-Type: application/json
 {
-    "id" : 1,
-    "user" : {
-        "id" : "1",
-        "username" : "peckazde",
-        "name" : "Zdeněk Pecka",
-        "email" : "peckazde@fit.cvut.cz",
-        "type" : "student",
-        "year" : "5"
-        },
-    "time" : 123456789,
-    "entry" : "Tohle je zprava"  
+    "title": "Title",
+    "text": "message",
+    "author" : "peckazde"
+    "eventDate" : 123456789,
+    "visible" : "true",
+    "lastChange" : 123456789
 }
 < 201
 +++++
@@ -662,16 +637,90 @@ POST /board/{courseCode}/{timeTableEntryId}
 > Content-Type: application/json
 {
     "id" : 1,
-    "user" : {
-        "id" : "1",
-        "username" : "peckazde",
-        "name" : "Zdeněk Pecka",
-        "email" : "peckazde@fit.cvut.cz",
-        "type" : "student",
-        "year" : "5"
-        },
-    "time" : 123456789,
-    "entry" : "Tohle je zprava"  
+    "title": "Title",
+    "text": "message",
+    "author" : "peckazde"
+    "eventDate" : 123456789,
+    "visible" : "true",
+    "lastChange" : 123456789 
+}
+< 201
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
+--
+Služby pracující s harmonogramem
+Tato sekce služeb zprostředkovává práci s harmonogramem.
+--
+Informace o harmonogramu předmětu.
+GET /schedule/{course_code}
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "entries": [
+    {
+        "id": 10,
+        "entryDate": 123456789,
+        "title": "pisemka",
+        "importToMsgboard": true
+    }
+  ]
+}
++++++
+< 401
++++++
+< 404
+
+
+Informace o harmonogramu cvičení.
+GET /schedule/{course_code}/{timeTableEntry_id}
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "entries": [
+    {
+        "id": 10,
+        "entryDate": 123456789,
+        "title": "pisemka",
+        "importToMsgboard": true
+    }
+  ]
+}
++++++
+< 401
++++++
+< 404
+
+
+Umožňuje přidávat záznamy do harmonogramu předmětu. 
+POST /schedule/{course_code}
+> Content-Type: application/json
+{
+    "entryDate": 123456789,
+    "title": "pisemka",
+    "importToMsgboard": true
+}
+< 201
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
+Umožňuje přidávat záznamy do harmonogramu cvičení. 
+POST /schedule/{course_code}/{timeTableEntry_id}
+> Content-Type: application/json
+{
+    "entryDate": 123456789,
+    "title": "pisemka",
+    "importToMsgboard": true
 }
 < 201
 +++++
