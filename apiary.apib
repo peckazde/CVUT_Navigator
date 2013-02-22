@@ -12,7 +12,7 @@ GET /info
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-    "week" : {"number" : 1, "type": "even"}
+    "week" : {"number" : 1, "parity": "even"}
 }
 +++++
 < 401
@@ -226,7 +226,6 @@ GET /map/plan/{id}
 {
   "id" : "456",
   "name" : "FIT Dejvice",
-  "date" : 123456789,
   "tiles" : "http://navigator.cvut.cz/data/map/plan/456.zip",
   "floors" : [
     {
@@ -300,7 +299,6 @@ GET /map/plan/1
 {
   "id" : "1",
   "name" : "FEL Karlovo náměstí",
-  "date" : 123456789,
   "tiles" : "http://navigator.cvut.cz/data/map/plan/1.zip",
   "floors" : [
     {
