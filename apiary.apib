@@ -491,9 +491,54 @@ GET /map/plan/1
           "longitude" : "14.417808"
          },
         "markerId" : 9
+      },
+      {
+        "id" : "12",
+        "type" : "stairs",
+        "coordinates" : {
+          "latitude" : "50.076748",
+          "longitude" : "14.417819"
+         },
+        "markerId" : 12
       }
-      ]
+    ]
+  },
+  {
+  "floor" : "0",
+  "constraints" : 
+  {
+    "southWest":
+    {
+      "latitude": 50.076534 ,
+      "longitude": 14.417152
+    },
+    "northEast":
+    {
+      "latitude": 50.077194,
+      "longitude": 14.418526
     }
+  },
+  "nodes" : [
+      {
+        "id" : "10",
+        "type" : "stairs",
+        "coordinates" : {
+          "latitude" : "50.076748",
+          "longitude" : "14.417807"
+         },
+        "markerId" : 10
+      },
+      {
+        "id" : "11",
+        "type" : "entrance",
+        "coordinates" : {
+          "latitude" : "50.076641",
+          "longitude" : "14.417818"
+         },
+        "markerId" : 11
+      }
+    ]
+  }
   ]
 }
 +++++
@@ -528,7 +573,7 @@ GET /map/path{?from,to}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "nodeIds" : [123, 124, 125, 256, 257, 358, 456]
+  "nodeIds" : [11, 10, 12, 8, 7, 6, 5]
 }
 +++++
 < 400
