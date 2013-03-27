@@ -413,8 +413,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076708",
           "longitude" : "14.417670"
-         },
-        "markerId" : 1
+         }
       },
       {
         "id" : "2",
@@ -423,8 +422,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076700",
           "longitude" : "14.417570"
-         },
-        "markerId" : 2
+         }
       },
       {
         "id" : "3",
@@ -433,8 +431,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076685",
           "longitude" : "14.417418"
-         },
-        "markerId" : 3
+         }
       },
       {
         "id" : "4",
@@ -443,8 +440,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076715",
           "longitude" : "14.417810"
-         },
-        "markerId" : 4
+         }
       },
       {
         "id" : "5",
@@ -454,7 +450,10 @@ GET /map/plan/1
           "latitude" : "50.076912",
           "longitude" : "14.418286"
          },
-        "markerId" : 5
+        "marker": {
+          "id": 3,
+          "type": "wall"
+        }
       },
       {
         "id" : "6",
@@ -462,8 +461,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076916",
           "longitude" : "14.418316"
-         },
-        "markerId" : 6
+         }
       },
       {
         "id" : "7",
@@ -472,7 +470,11 @@ GET /map/plan/1
           "latitude" : "50.076862",
           "longitude" : "14.418317"
          },
-        "markerId" : 7
+        "marker": {
+          "id": 2,
+          "angle": 0,
+          "type": "floor"
+        }
       },
       {
         "id" : "8",
@@ -480,8 +482,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076767",
           "longitude" : "14.418328"
-         },
-        "markerId" : 8
+         }
       },
       {
         "id" : "9",
@@ -489,8 +490,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076732",
           "longitude" : "14.417819"
-         },
-        "markerId" : 9
+         }
       },
       {
         "id" : "12",
@@ -498,8 +498,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417819"
-         },
-        "markerId" : 12
+         }
       }
     ]
   },
@@ -526,7 +525,11 @@ GET /map/plan/1
           "latitude" : "50.076748",
           "longitude" : "14.417807"
          },
-        "markerId" : 10
+        "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
       },
       {
         "id" : "11",
@@ -535,7 +538,11 @@ GET /map/plan/1
           "latitude" : "50.076641",
           "longitude" : "14.417818"
          },
-        "markerId" : 11
+        "marker": {
+          "id": 0,
+          "angle": 0,
+          "type": "floor"
+        }
       }
     ]
   },
@@ -579,6 +586,91 @@ GET /map/node/{id}
     "floor" : 1,
     "markerId" : 10
 } 
++++++
+< 401
++++++
+< 404
+
+Informace o bodu pro marker id.
+GET /map/node/marker/{markerId}
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "11",
+  "type" : "entrance",
+  "coordinates" : {
+    "latitude" : "50.076641",
+    "longitude" : "14.417818"
+   },
+  "marker" : {
+            "id": 0,
+            "angle": 0,
+            "type": "floor"
+        }
+} 
++++++
+< 401
++++++
+< 404
+
+GET /map/node/marker/1
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "10",
+  "type" : "stairs",
+  "coordinates" : {
+    "latitude" : "50.076748",
+    "longitude" : "14.417807"
+   },
+  "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
+}
++++++
+< 401
++++++
+< 404
+
+GET /map/node/marker/2
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "7",
+  "type" : "intersection",
+  "coordinates" : {
+    "latitude" : "50.076862",
+    "longitude" : "14.418317"
+   },
+  "marker": {
+          "id": 2,
+          "angle": 0,
+          "type": "floor"
+        }
+}
++++++
+< 401
++++++
+< 404
+
+GET /map/node/marker/3
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "5",
+  "type" : "room",
+  "name" : "KN:E-512",
+  "coordinates" : {
+    "latitude" : "50.076912",
+    "longitude" : "14.418286"
+   },
+  "marker": {
+          "id": 3,
+          "type": "wall"
+        }
+}
 +++++
 < 401
 +++++
