@@ -940,6 +940,215 @@ POST /board/{courseCode}/{timeTableEntryId}
 < 404
 
 
+Vymazání nástěnky předmětu a všech příspěvků na ní.
+DELETE /board/{courseCode}
+< 200
++++++
+< 400
++++++
+< 401
+
+
+Vymazání nástěnky cvičení a všech příspěvků na ní.
+DELETE /board/{courseCode}/{timeTableEntryId}
+< 200
++++++
+< 400
++++++
+< 401
+
+
+Přehled zablokovaných uživatelských účtů.
+GET /board/blockedusers
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "blockedUsers" : [
+    {
+        "user": {
+            "id" : "1",
+            "username" : "peckazde",
+            "name" : "Zdeněk Pecka",
+            "email" : "peckazde@fit.cvut.cz",
+            "type" : "student",
+            "year" : "5"
+        },
+        "blockedUntil": 123456789
+    }
+  ]
+}
++++++
+< 400
++++++
+< 401
+
+
+Zjištění jestli je uživatelský účet zablokován.
+GET /board/blockedusers/{username}
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "restul": true
+}
++++++
+< 401
++++++
+< 404
+
+
+Zablokovat uživatelovi účet.
+POST /board/blockeuser
+> Content-Type: application/json
+{
+    "username" : "peckazde",
+    "blockedUntil" : 123456789 
+}
+< 201
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
+Odblokování uživatelského účtu.
+DELETE /board/blockedusers/{username}
+< 200
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
+Žádost o zablokování uživatelského účtu.
+POST /board/blockrequest
+> Content-Type: application/json
+{
+    "id" : 10,
+    "message" : "Spammer",
+    "username" : "peckazde",
+    "author" : "skalamic"
+}
+< 201
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
+Zobrazení všech žádostí o zablokování.
+GET /board/blockrequests
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "blockRequests" : [
+    {
+        "id" : 10,
+        "message" : "Spammer",
+        "blockedUser": {
+            "id" : "1",
+            "username" : "peckazde",
+            "name" : "Zdeněk Pecka",
+            "email" : "peckazde@fit.cvut.cz",
+            "type" : "student",
+            "year" : "5"
+        },
+        "author": {
+            "id" : "2",
+            "username" : "skalamic",
+            "name" : "Michal Skala",
+            "email" : "skalamic@fit.cvut.cz",
+            "type" : "student",
+            "year" : "5"
+        }
+    }
+  ]
+}
++++++
+< 400
++++++
+< 401
+
+
+Smazání žádosti o zablokování účtu.
+DELETE /board/blockrequests/{blockRequestId}
+< 200
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
+Žádost o odblokování uživatelského účtu.
+POST /board/unblockrequest
+> Content-Type: application/json
+{
+    "id" : 10,
+    "message" : "Už se uklidnil",
+    "username" : "peckazde",
+    "author" : "skalamic"
+}
+< 201
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
+Seznam všech žádostí o odblokování.
+GET /board/unblockrequests
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "unblockRequests" : [
+    {
+        "id" : 10,
+        "message" : "Už se uklidnil",
+        "blockedUser": {
+            "id" : "1",
+            "username" : "peckazde",
+            "name" : "Zdeněk Pecka",
+            "email" : "peckazde@fit.cvut.cz",
+            "type" : "student",
+            "year" : "5"
+        },
+        "author": {
+            "id" : "2",
+            "username" : "skalamic",
+            "name" : "Michal Skala",
+            "email" : "skalamic@fit.cvut.cz",
+            "type" : "student",
+            "year" : "5"
+        }
+    }
+  ]
+}
++++++
+< 400
++++++
+< 401
+
+
+Smazání žádosti o odblokování uživatelského účtu.
+DELETE /board/unblockrequests/{unblockRequestId}
+< 200
++++++
+< 400
++++++
+< 401
++++++
+< 404
+
+
 --
 Služby pracující s harmonogramem
 Tato sekce služeb zprostředkovává práci s harmonogramem.
