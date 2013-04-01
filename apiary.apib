@@ -784,9 +784,18 @@ GET /board/{courseCode}{?date}
       "id" : 1,
       "title": "Title",
       "text": "message",
-      "author" : "peckazde"
+      "author" : {
+        "id" : "1",
+        "username" : "peckazde",
+        "name" : "Zdeněk Pecka",
+        "email" : "peckazde@fit.cvut.cz",
+        "type" : "student",
+        "year" : "5"
+      },
       "eventDate" : 123456789,
       "visible" : "true",
+      "weblink": "http://navigator.cz",
+      "teachersEntry": true,
       "lastChange" : 123456789
     }
   ]
@@ -811,8 +820,17 @@ GET /board/{courseCode}/{timeTableEntrIid}{?date}
       "id" : 1,
       "title": "Title",
       "text": "message",
-      "author" : "peckazde"
+      "author" : {
+        "id" : "1",
+        "username" : "peckazde",
+        "name" : "Zdeněk Pecka",
+        "email" : "peckazde@fit.cvut.cz",
+        "type" : "student",
+        "year" : "5"
+      },
       "eventDate" : 123456789,
+      "weblink": "http://navigator.cz",
+      "teachersEntry": true,
       "visible" : "true",
       "lastChange" : 123456789
     }
@@ -840,9 +858,18 @@ GET /board/update{?date}
             "id" : 1,
             "title": "Title",
             "text": "message",
-            "author" : "peckazde"
+            "author" : {
+                "id" : "1",
+                "username" : "peckazde",
+                "name" : "Zdeněk Pecka",
+                "email" : "peckazde@fit.cvut.cz",
+                "type" : "student",
+                "year" : "5"
+            },
             "eventDate" : 123456789,
             "visible" : "true",
+            "weblink": "http://navigator.cz",
+            "teachersEntry": true,
             "lastChange" : 123456789
         }
       ]
@@ -867,6 +894,8 @@ PUT /board/{courseCode}/{messageId}
     "author" : "peckazde"
     "eventDate" : 123456789,
     "visible" : "true",
+    "weblink": "http://navigator.cz",
+    "teachersEntry": true,
     "lastChange" : 123456789
 }
 < 200
@@ -888,6 +917,8 @@ PUT /board/{courseCode}/{timeTableEntrIid}/{messageId}
     "author" : "peckazde"
     "eventDate" : 123456789,
     "visible" : "true",
+    "weblink": "http://navigator.cz",
+    "teachersEntry": true,
     "lastChange" : 123456789
 }
 < 200
@@ -908,6 +939,8 @@ POST /board/{courseCode}
     "author" : "peckazde"
     "eventDate" : 123456789,
     "visible" : "true",
+    "weblink": "http://navigator.cz",
+    "teachersEntry": true,
     "lastChange" : 123456789
 }
 < 201
@@ -929,6 +962,8 @@ POST /board/{courseCode}/{timeTableEntryId}
     "author" : "peckazde"
     "eventDate" : 123456789,
     "visible" : "true",
+    "weblink": "http://navigator.cz",
+    "teachersEntry": true,
     "lastChange" : 123456789 
 }
 < 201
@@ -1000,7 +1035,7 @@ Zablokovat uživatelovi účet.
 POST /board/blockeuser
 > Content-Type: application/json
 {
-    "username" : "peckazde",
+    "user" : "peckazde",
     "blockedUntil" : 123456789 
 }
 < 201
@@ -1029,7 +1064,7 @@ POST /board/blockrequest
 {
     "id" : 10,
     "message" : "Spammer",
-    "username" : "peckazde",
+    "user" : "peckazde",
     "author" : "skalamic"
 }
 < 201
@@ -1050,7 +1085,7 @@ GET /board/blockrequests
     {
         "id" : 10,
         "message" : "Spammer",
-        "blockedUser": {
+        "user": {
             "id" : "1",
             "username" : "peckazde",
             "name" : "Zdeněk Pecka",
@@ -1092,7 +1127,7 @@ POST /board/unblockrequest
 {
     "id" : 10,
     "message" : "Už se uklidnil",
-    "username" : "peckazde",
+    "user" : "peckazde",
     "author" : "skalamic"
 }
 < 201
@@ -1113,7 +1148,7 @@ GET /board/unblockrequests
     {
         "id" : 10,
         "message" : "Už se uklidnil",
-        "blockedUser": {
+        "user": {
             "id" : "1",
             "username" : "peckazde",
             "name" : "Zdeněk Pecka",
