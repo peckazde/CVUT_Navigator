@@ -107,11 +107,18 @@ GET /kos/person/{username}/timetable
         "id" : "126",
         "type" : "room",
         "name" : "T9:349",
+        "floor": 3,
+        "floorName": "T9:3**",
+        "plan": 5,
         "coordinates" : {
           "latitude" : "50.1231",
           "longitude" : "14.1231"
          },
-         "markerId" : 10
+         "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
        },
       "course" : {
         "id" : "10",
@@ -124,7 +131,9 @@ GET /kos/person/{username}/timetable
         "username" : "zahradni",
         "name" : "Ing. Tomáš Zahradnický, Ph.D.",
         "email" : "zahradni@fit.cvut.cz",
-        "type" : "teacher"
+        "type" : "teacher",
+        "roomName": "T9:305",
+        "nodeID": 5
       }
     },
     {
@@ -138,11 +147,18 @@ GET /kos/person/{username}/timetable
         "id" : "4",
         "type" : "room",
         "name" : "KN:E-126",
+        "floor": 3,
+        "floorName": "KN:E-1**",
+        "plan": 5,
         "coordinates" : {
           "latitude" : "50.076715",
           "longitude" : "14.417810"
          },
-        "markerId" : 4
+        "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
       },
       "course" : {
         "id" : "13",
@@ -155,7 +171,9 @@ GET /kos/person/{username}/timetable
         "username" : "hatlamatla",
         "name" : "Ing. Adam Čižek",
         "email" : "cizek@fit.cvut.cz",
-        "type" : "teacher"
+        "type" : "teacher",
+        "roomName": "T9:305",
+        "nodeID": 5
       }
     },
     {
@@ -169,11 +187,18 @@ GET /kos/person/{username}/timetable
         "id" : "127",
         "type" : "room",
         "name" : "T9:350",
+        "floor": 3,
+        "floorName": "T9:3**",
+        "plan": 5,
         "coordinates" : {
           "latitude" : "50.1231",
           "longitude" : "14.1231"
          },
-         "markerId" : 11
+         "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
        },
       "course" : {
         "id" : "11",
@@ -186,7 +211,9 @@ GET /kos/person/{username}/timetable
         "username" : "gattejos",
         "name" : "Ing. Josef Gattermayer",
         "email" : "gattejos@fit.cvut.cz",
-        "type" : "teacher"
+        "type" : "teacher",
+        "roomName": "T9:305",
+        "nodeID": 5
       }
     },
     {
@@ -201,11 +228,18 @@ GET /kos/person/{username}/timetable
         "id" : "3",
         "type" : "room",
         "name" : "KN:E-024",
+        "floor": 3,
+        "floorName": "KN:E-0**",
+        "plan": 5,
         "coordinates" : {
           "latitude" : "50.076685",
           "longitude" : "14.417418"
          },
-        "markerId" : 3
+        "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
        },
       "course" : {
         "id" : "12",
@@ -218,7 +252,9 @@ GET /kos/person/{username}/timetable
         "username" : "xvagner",
         "name" : "Ing. Ladislav Vágner",
         "email" : "xvagner@fit.cvut.cz",
-        "type" : "teacher"
+        "type" : "teacher",
+        "roomName": "T9:305",
+        "nodeID": 5
       }
     }
   ]
@@ -274,7 +310,8 @@ GET /map/pois/
       "latitude" : "50.076866",
       "longitude" : "14.417839"
     },
-    "planId" : "1"
+    "planId" : "1",
+    "address": "FEL Karlovo náměstí"
   }
 ]
 }
@@ -298,7 +335,8 @@ GET /map/pois/{types}
       "latitude" : "50.076866",
       "longitude" : "14.417839"
     },
-    "planId" : "1"
+    "planId" : "1",
+    "address": "FEL Karlovo náměstí"
   }
 ]
 }
@@ -321,7 +359,8 @@ GET /map/poi/{id}
       "latitude" : "50.076866",
       "longitude" : "14.417839"
     },
-    "planId" : "1"
+    "planId" : "1",
+    "address": "FEL Karlovo náměstí"
 }
 +++++
 < 401
@@ -337,9 +376,12 @@ GET /map/plan/{id}
   "id" : "456",
   "name" : "FIT Dejvice",
   "tiles" : "http://navigator.cvut.cz/data/map/plan/456.zip",
+  "maxZoom": 24,
+  "minZoom": 20,
   "floors" : [
     {
       "floor" : "1",
+      "floorName": "prvni patro",
       "constraints" : 
       {
         "southWest":
@@ -353,44 +395,73 @@ GET /map/plan/{id}
           "longitude": 14.418526
         }
       },
+      "plan": 10,
       "nodes" : [
       {
         "id" : "123",
         "type" : "crossroad",
+        "floor": 3,
+        "floorName": "KN:E-0**",
+        "plan": 456,
         "coordinates" : {
           "latitude" : "50.1231",
           "longitude" : "14.1231"
          },
-        "markerId" : 1
+        "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
       },
       {
         "id" : "124",
         "type" : "stairs",
+        "floor": 3,
+        "floorName": "KN:E-0**",
+        "plan": 456,
         "coordinates" : {
           "latitude" : "50.1231",
           "longitude" : "14.1231"
          },
         "toFloor" : "2",
-        "markerId" : 2
+        "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
       },
       {
         "id" : "125",
         "type" : "entrance",
+        "floor": 3,
+        "floorName": "KN:E-0**",
+        "plan": 456,
         "coordinates" : {
           "latitude" : "50.1231",
           "longitude" : "14.1231"
         },
-        "markerId" : 3
+        "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
       },
       {
         "id" : "126",
         "type" : "room",
         "name" : "T9:155",
+        "floor": 3,
+        "floorName": "KN:E-0**",
+        "plan": 456,
         "coordinates" : {
           "latitude" : "50.1231",
           "longitude" : "14.1231"
          },
-         "markerId" : 10
+         "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
       } 
       ]
     }
@@ -410,9 +481,12 @@ GET /map/plan/1
   "id" : "1",
   "name" : "FEL Karlovo náměstí",
   "tiles" : "http://navigator.cvut.cz/data/map/plan/1.zip",
+  "maxZoom": 24,
+  "minZoom": 20,
   "floors" : [
     {
       "floor" : "1",
+      "floorName": "prvni patro",
       "constraints" : 
       {
         "southWest":
@@ -426,11 +500,15 @@ GET /map/plan/1
           "longitude": 14.418526
         }
       },
+      "plan": 10,
       "nodes" : [
       {
         "id" : "1",
         "type" : "room",
         "name" : "KN:E-022",
+        "floor": 0,
+        "floorName": "KN:E-0**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076708",
           "longitude" : "14.417670"
@@ -440,6 +518,9 @@ GET /map/plan/1
         "id" : "2",
         "type" : "room",
         "name" : "KN:E-023",
+        "floor": 0,
+        "floorName": "KN:E-0**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076700",
           "longitude" : "14.417570"
@@ -449,6 +530,9 @@ GET /map/plan/1
         "id" : "3",
         "type" : "room",
         "name" : "KN:E-024",
+        "floor": 0,
+        "floorName": "KN:E-0**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076685",
           "longitude" : "14.417418"
@@ -458,6 +542,9 @@ GET /map/plan/1
         "id" : "4",
         "type" : "room",
         "name" : "KN:E-126",
+        "floor": 1,
+        "floorName": "KN:E-1**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076715",
           "longitude" : "14.417810"
@@ -467,6 +554,9 @@ GET /map/plan/1
         "id" : "5",
         "type" : "room",
         "name" : "KN:E-512",
+        "floor": 5,
+        "floorName": "KN:E-5**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076912",
           "longitude" : "14.418286"
@@ -475,6 +565,9 @@ GET /map/plan/1
       {
         "id" : "6",
         "type" : "intersection",
+        "floor": 3,
+        "floorName": "KN:E-3**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076916",
           "longitude" : "14.418316"
@@ -488,6 +581,9 @@ GET /map/plan/1
       {
         "id" : "7",
         "type" : "intersection",
+        "floor": 3,
+        "floorName": "KN:E-3**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076862",
           "longitude" : "14.418317"
@@ -501,6 +597,9 @@ GET /map/plan/1
       {
         "id" : "8",
         "type" : "intersection",
+        "floor": 0,
+        "floorName": "KN:E-0**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076767",
           "longitude" : "14.418328"
@@ -514,6 +613,9 @@ GET /map/plan/1
       {
         "id" : "9",
         "type" : "intersection",
+        "floor": 3,
+        "floorName": "KN:E-3**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076732",
           "longitude" : "14.417819"
@@ -527,6 +629,9 @@ GET /map/plan/1
       {
         "id" : "12",
         "type" : "stairs",
+        "floor": 3,
+        "floorName": "KN:E-3**",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417819"
@@ -536,6 +641,7 @@ GET /map/plan/1
   },
   {
   "floor" : "0",
+  "floorName": "prizemi",
   "constraints" : 
   {
     "southWest":
@@ -549,10 +655,12 @@ GET /map/plan/1
       "longitude": 14.418526
     }
   },
+  "plan": 10,
   "nodes" : [
       {
         "id" : "10",
         "type" : "stairs",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417807"
@@ -561,6 +669,7 @@ GET /map/plan/1
       {
         "id" : "11",
         "type" : "entrance",
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076641",
           "longitude" : "14.417818"
@@ -570,6 +679,7 @@ GET /map/plan/1
   },
   {
   "floor" : "2",
+  "floorName": "druhe patro",
   "constraints" : 
   {
     "southWest":
@@ -583,6 +693,7 @@ GET /map/plan/1
       "longitude": 14.418526
     }
   },
+  "plan": 10,
   "nodes" : []
   }
   ]
@@ -601,12 +712,18 @@ GET /map/node/{id}
     "id" : "126",
     "type" : "room",
     "name" : "T9:155",
+    "floorName": "KN:E-3**",
     "coordinates" : {
         "latitude" : "50.1231",
         "longitude" : "14.1231"
         },
     "floor" : 1,
-    "markerId" : 10
+    "plan": 1,
+    "marker" : {
+            "id": 1,
+            "angle": 0,
+            "type": "floor"
+        }
 } 
 +++++
 < 401
@@ -716,21 +833,6 @@ GET /map/path{?from,to}
 < 401
 
 
-Informace o budově určené pomocí číselného identifikátoru. Vrací jméno a výšku budovy.
-GET /map/building/{idBudovy}
-< 200
-< Content-Type: application/json; charset=utf-8
-{
-  "id" : "1",
-  "name" : "FIT Dejvice",
-  "height" : "50"
-}
-+++++
-< 401
-+++++
-< 404
-
-
 Vrací dlaždici mapového podkladu podle specifikovaného umístění.
 GET /map/{idBudovy}/{floor}/{zoom}/{x}/{y}
 < 200
@@ -765,6 +867,7 @@ GET /transportation{?from,to,time}
             "id" : 50,
             "name" : "Koleje Strahov",
             "type" : "station",
+            "address": "Koleje Strahov"
             "coordinates" : {
               "latitude" : "50.1231",
               "longitude" : "14.1231"
@@ -775,6 +878,7 @@ GET /transportation{?from,to,time}
             "id" : 55,
             "name" : "Dejvicka",
             "type" : "station",
+            "address": "Dejvicka"
             "coordinates" : {
               "latitude" : "50.1231",
               "longitude" : "14.1231"
