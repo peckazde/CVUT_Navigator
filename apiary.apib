@@ -9,19 +9,39 @@ Authorizace
 --
 Authorizace klienta k používání API. Používá se protokol OAuth2.
 POST /authorize
-> Content-Type: application/x-www-form-urlencoded
+> Content-Type: application/json
 {
-    grant_type=password&username=johndoe&password=A3ddj3w   
+    "username": "johndoe",
+    "password": "A3ddj3w"
 }
 < 200
 < Content-Type: application/json; charset=utf-8
 {
     "access_token":"2YotnFZFEjr1zCsicMWpAA",
     "token_type":"example",
-    "expires_in":3600
+    "expires_in":3600,
+    "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA"
 }
 +++++
 < 401
+
+
+Žádost o vygenerování nového access tokenu na základě refresh tokenu.
+POST /refreshToken
+> Content-Type: application/json
+{
+    "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA"
+}
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+    "access_token":"2YotnFZFEjr1zCsicMWpBBB",
+    "token_type":"example",
+    "expires_in":3600,
+    "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA"
+}
++++++
+< 400
 
 
 --
@@ -395,7 +415,7 @@ GET /map/plan/{id}
           "longitude": 14.418526
         }
       },
-      "plan": 10,
+      "plan": 456,
       "nodes" : [
       {
         "id" : "123",
@@ -500,7 +520,7 @@ GET /map/plan/1
           "longitude": 14.418526
         }
       },
-      "plan": 10,
+      "plan": 1,
       "nodes" : [
       {
         "id" : "1",
@@ -655,7 +675,7 @@ GET /map/plan/1
       "longitude": 14.418526
     }
   },
-  "plan": 10,
+  "plan": 1,
   "nodes" : [
       {
         "id" : "10",
@@ -693,7 +713,7 @@ GET /map/plan/1
       "longitude": 14.418526
     }
   },
-  "plan": 10,
+  "plan": 1,
   "nodes" : []
   }
   ]
