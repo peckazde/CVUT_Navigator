@@ -124,21 +124,16 @@ GET /kos/person/{username}/timetable
       "length" : "90",
       "type" : "lecture",
       "room" : {
-        "id" : "126",
+        "id" : "2",
         "type" : "room",
-        "name" : "T9:349",
-        "floor": 3,
-        "floorName": "T9:3**",
-        "plan": 5,
+        "name" : "KN:E-023",
+        "floor": 1,
+        "floorName": "KN:E-0**",
+        "plan": 1,
         "coordinates" : {
-          "latitude" : "50.1231",
-          "longitude" : "14.1231"
-         },
-         "marker" : {
-            "id": 1,
-            "angle": 0,
-            "type": "floor"
-        }
+          "latitude" : "50.076700",
+          "longitude" : "14.417570"
+         }
        },
       "course" : {
         "id" : "10",
@@ -167,18 +162,13 @@ GET /kos/person/{username}/timetable
         "id" : "4",
         "type" : "room",
         "name" : "KN:E-126",
-        "floor": 3,
+        "floor": 1,
         "floorName": "KN:E-1**",
-        "plan": 5,
+        "plan": 1,
         "coordinates" : {
           "latitude" : "50.076715",
           "longitude" : "14.417810"
-         },
-        "marker" : {
-            "id": 1,
-            "angle": 0,
-            "type": "floor"
-        }
+         }
       },
       "course" : {
         "id" : "13",
@@ -204,21 +194,16 @@ GET /kos/person/{username}/timetable
       "length" : "90",
       "type" : "practice",
       "room" : {
-        "id" : "127",
+        "id" : "5",
         "type" : "room",
-        "name" : "T9:350",
-        "floor": 3,
-        "floorName": "T9:3**",
-        "plan": 5,
+        "name" : "KN:E-512",
+        "floor": 1,
+        "floorName": "KN:E-5**",
+        "plan": 1,
         "coordinates" : {
-          "latitude" : "50.1231",
-          "longitude" : "14.1231"
-         },
-         "marker" : {
-            "id": 1,
-            "angle": 0,
-            "type": "floor"
-        }
+          "latitude" : "50.076912",
+          "longitude" : "14.418286"
+         }
        },
       "course" : {
         "id" : "11",
@@ -528,7 +513,7 @@ GET /map/plan/1
         "id" : "1",
         "type" : "room",
         "name" : "KN:E-022",
-        "floor": 0,
+        "floor": 1,
         "floorName": "KN:E-0**",
         "plan": 1,
         "coordinates" : {
@@ -540,7 +525,7 @@ GET /map/plan/1
         "id" : "2",
         "type" : "room",
         "name" : "KN:E-023",
-        "floor": 0,
+        "floor": 1,
         "floorName": "KN:E-0**",
         "plan": 1,
         "coordinates" : {
@@ -552,7 +537,7 @@ GET /map/plan/1
         "id" : "3",
         "type" : "room",
         "name" : "KN:E-024",
-        "floor": 0,
+        "floor": 1,
         "floorName": "KN:E-0**",
         "plan": 1,
         "coordinates" : {
@@ -576,7 +561,7 @@ GET /map/plan/1
         "id" : "5",
         "type" : "room",
         "name" : "KN:E-512",
-        "floor": 5,
+        "floor": 1,
         "floorName": "KN:E-5**",
         "plan": 1,
         "coordinates" : {
@@ -587,7 +572,7 @@ GET /map/plan/1
       {
         "id" : "6",
         "type" : "intersection",
-        "floor": 3,
+        "floor": 1,
         "floorName": "KN:E-3**",
         "plan": 1,
         "coordinates" : {
@@ -603,7 +588,7 @@ GET /map/plan/1
       {
         "id" : "7",
         "type" : "intersection",
-        "floor": 3,
+        "floor": 1,
         "floorName": "KN:E-3**",
         "plan": 1,
         "coordinates" : {
@@ -619,7 +604,7 @@ GET /map/plan/1
       {
         "id" : "8",
         "type" : "intersection",
-        "floor": 0,
+        "floor": 1,
         "floorName": "KN:E-0**",
         "plan": 1,
         "coordinates" : {
@@ -635,7 +620,7 @@ GET /map/plan/1
       {
         "id" : "9",
         "type" : "intersection",
-        "floor": 3,
+        "floor": 1,
         "floorName": "KN:E-3**",
         "plan": 1,
         "coordinates" : {
@@ -651,7 +636,7 @@ GET /map/plan/1
       {
         "id" : "12",
         "type" : "stairs",
-        "floor": 3,
+        "floor": 1,
         "floorName": "KN:E-3**",
         "plan": 1,
         "coordinates" : {
@@ -683,7 +668,7 @@ GET /map/plan/1
         "id" : "10",
         "type" : "stairs",
         "plan": 1,
-        "floor" : "2",
+        "floor" : 0,
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417807"
@@ -693,6 +678,7 @@ GET /map/plan/1
         "id" : "11",
         "type" : "entrance",
         "plan": 1,
+        "floor" : 0,
         "coordinates" : {
           "latitude" : "50.076641",
           "longitude" : "14.417818"
@@ -760,6 +746,8 @@ GET /map/node/marker/{markerId}
 < Content-Type: application/json; charset=utf-8
 {
   "id" : "9",
+  "floor" : 1,
+  "plan": 1,
   "type" : "intersection",
   "coordinates" : {
     "latitude" : "50.076732",
@@ -782,6 +770,8 @@ GET /map/node/marker/1
 < Content-Type: application/json; charset=utf-8
 {
   "id" : "8",
+  "floor" : 1,
+  "plan": 1,
         "type" : "intersection",
         "coordinates" : {
           "latitude" : "50.076767",
@@ -804,6 +794,8 @@ GET /map/node/marker/2
 < Content-Type: application/json; charset=utf-8
 {
   "id" : "7",
+  "floor" : 1,
+  "plan": 1,
   "type" : "intersection",
   "coordinates" : {
     "latitude" : "50.076862",
@@ -826,6 +818,8 @@ GET /map/node/marker/3
 < Content-Type: application/json; charset=utf-8
 {
   "id" : "6",
+  "floor" : 1,
+  "plan": 1,
     "type" : "intersection",
     "coordinates" : {
     "latitude" : "50.076916",
