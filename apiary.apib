@@ -743,7 +743,7 @@ GET /map/node/{id}
     "marker" : {
             "id": 1,
             "angle": 0,
-            "type": "floor"
+            "type": "wall"
         }
 } 
 +++++
@@ -768,8 +768,8 @@ GET /map/node/marker/{markerId}
    },
    "marker" : {
             "id": 0,
-            "angle": 0,
-            "type": "floor"
+            "angle": -90,
+            "type": "wall"
         }
 } 
 +++++
@@ -793,8 +793,8 @@ GET /map/node/marker/1
   },
   "marker" : {
             "id": 1,
-            "angle": 0,
-            "type": "floor"
+            "angle": 180,
+            "type": "wall"
         }
 }
 +++++
@@ -818,8 +818,8 @@ GET /map/node/marker/2
    },
   "marker": {
           "id": 2,
-          "angle": 0,
-          "type": "floor"
+          "angle": -90,
+          "type": "wall"
         }
 }
 +++++
@@ -844,7 +844,7 @@ GET /map/node/marker/3
   "marker": {
           "id": 3,
           "type": "wall",
-          "angle":0
+          "angle":180
   }
 }
 +++++
