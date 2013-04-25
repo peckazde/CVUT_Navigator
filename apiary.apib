@@ -1199,7 +1199,9 @@ GET /board/blockedusers/{username}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "restul": true
+  "blocked": true,
+  "blockedUntil" : 123456789,
+  "reason": "spamer"
 }
 +++++
 < 401
