@@ -950,7 +950,7 @@ Tato sekce služeb zprostředkovává práci s nástěnkami.
 --
 Informace o příspěvkách na nástěnce předmětu. Pokud je specifikován ?date, vrací se jen příspěvky
 mladší než toto datum. Pokud datum není specifikováno, vrací se všechny záznamy na nástěnce.
-GET /board/{courseCode}{?date}
+GET /board/{courseCode}{?offset}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
@@ -986,7 +986,7 @@ GET /board/{courseCode}{?date}
 
 Informace o příspěvkách na nástěnce cvičení konkrétního předmětu. Pokud je specifikován ?date,
 vrací se jen příspěvky mladší než toto datum. Pokud datum není specifikováno, vrací se všechny záznamy na nástěnce.
-GET /board/{courseCode}/{timeTableEntrIid}{?date}
+GET /board/{courseCode}/{timeTableEntrIid}{?offset}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
@@ -1022,7 +1022,7 @@ GET /board/{courseCode}/{timeTableEntrIid}{?date}
 
 Informace o příspěvkách na všech nástěnkách, které uživatel odebírá. Pokud je specifikován ?date, vrací se 
 jen příspěvky mladší než toto datum. Pokud datum není specifikováno, vrací se všechny záznamy na všech nástěnkách.
-GET /board/update{?date}
+GET /board/update{?offset}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
