@@ -11,7 +11,7 @@ Authorizace klienta k používání API. Používá se protokol OAuth2.
 POST /authorize
 > Content-Type: application/json
 {
-    "username": "johndoe",
+    "user": "johndoe",
     "password": "A3ddj3w"
 }
 < 200
@@ -954,7 +954,6 @@ GET /board/{courseCode}{?offset}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "id" : 5,
   "boardEntries" : [
     {
       "id" : 1,
@@ -990,7 +989,6 @@ GET /board/{courseCode}/{timeTableEntrIid}{?offset}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "id" : 5,
   "boardEntries" : [
     {
       "id" : 1,
@@ -1067,35 +1065,8 @@ PUT /board/{courseCode}/{messageId}
     "id" : 1,
     "title": "Title",
     "text": "message",
-    "author" : "peckazde"
-    "eventDate" : 123456789,
     "visible" : "true",
-    "weblink": "http://navigator.cz",
-    "teachersEntry": true,
-    "lastChange" : 123456789
-}
-< 200
-+++++
-< 400
-+++++
-< 401
-+++++
-< 404
-
-
-Změní příspěvek na nástěnce cvičení. Uživatel může měnit pouze své příspěvky. <messageId> je identifikátor měněného příspěvku.
-PUT /board/{courseCode}/{timeTableEntrIid}/{messageId}
-> Content-Type: application/json
-{
-    "id" : 1,
-    "title": "Title",
-    "text": "message",
-    "author" : "peckazde"
-    "eventDate" : 123456789,
-    "visible" : "true",
-    "weblink": "http://navigator.cz",
-    "teachersEntry": true,
-    "lastChange" : 123456789
+    "weblink": "http://navigator.cz"
 }
 < 200
 +++++
@@ -1112,12 +1083,8 @@ POST /board/{courseCode}
 {
     "title": "Title",
     "text": "message",
-    "author" : "peckazde"
-    "eventDate" : 123456789,
     "visible" : "true",
-    "weblink": "http://navigator.cz",
-    "teachersEntry": true,
-    "lastChange" : 123456789
+    "weblink": "http://navigator.cz"
 }
 < 201
 +++++
@@ -1135,12 +1102,8 @@ POST /board/{courseCode}/{timeTableEntryId}
     "id" : 1,
     "title": "Title",
     "text": "message",
-    "author" : "peckazde"
-    "eventDate" : 123456789,
     "visible" : "true",
-    "weblink": "http://navigator.cz",
-    "teachersEntry": true,
-    "lastChange" : 123456789 
+    "weblink": "http://navigator.cz" 
 }
 < 201
 +++++
