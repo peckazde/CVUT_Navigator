@@ -576,7 +576,12 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076912",
           "longitude" : "14.418286"
-         }
+         },
+         "marker": {
+          "id": 12,
+          "type": "floor",
+          "angle":0
+        }
       },
       {
         "id" : "6",
@@ -682,7 +687,12 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417807"
-         }
+         },
+         "marker": {
+              "id": 5,
+              "type": "wall",
+              "angle":0
+        }
       },
       {
         "id" : "11",
@@ -693,7 +703,12 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076641",
           "longitude" : "14.417818"
-         }
+         },
+      "marker": {
+              "id": 4,
+              "type": "floor",
+              "angle":90
+        }
       }
     ]
   },
@@ -853,6 +868,86 @@ GET /map/node/marker/3
 < 401
 +++++
 < 404
+
+GET /map/node/marker/4
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  {
+    "id" : "11",
+    "type" : "entrance",
+    "plan": 1,
+    "floor" : 0,
+    "building": 1,
+    "coordinates" : {
+      "latitude" : "50.076641",
+      "longitude" : "14.417818"
+     },
+  "marker": {
+          "id": 4,
+          "type": "floor",
+          "angle":90
+  }
+}
++++++
+< 401
++++++
+< 404
+
+GET /map/node/marker/5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  {
+    "id" : "10",
+    "type" : "stairs",
+    "plan": 1,
+    "floor" : 0,
+    "building": 1,
+    "coordinates" : {
+      "latitude" : "50.076748",
+      "longitude" : "14.417807"
+     },
+     "marker": {
+          "id": 5,
+          "type": "wall",
+          "angle":0
+    }
+}
++++++
+< 401
++++++
+< 404
+
+GET /map/node/marker/12
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  {
+    "id" : "5",
+    "type" : "room",
+    "name" : "KN:E-512",
+    "floor": 1,
+    "floorName": "KN:E-5**",
+    "plan": 1,
+    "building": 1,
+    "coordinates" : {
+      "latitude" : "50.076912",
+      "longitude" : "14.418286"
+     },
+     "marker": {
+      "id": 12,
+      "type": "floor",
+      "angle":0
+    }
+}
++++++
+< 401
++++++
+< 404
+
+
+
 
 
 Vrací cestu mezi dvěma body formou seznamu identikátoru jednotlivých bodů cesty. Lze volat jen pro cestu mezi dvěma body v rámci jedné budovy.
