@@ -547,7 +547,7 @@ GET /map/plan/1
           "longitude" : "14.417418"
          },
          "marker": {
-          "id": 0,
+          "id": 13,
           "angle": -90,
           "type": "floor"
         }
@@ -656,7 +656,12 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417819"
-         }
+         },
+         "marker": {
+          "id": 0,
+          "angle": 180,
+          "type": "floor"
+        }
       }
     ]
   },
@@ -772,22 +777,21 @@ GET /map/node/marker/{markerId}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "id" : "3",
-        "type" : "room",
-        "name" : "KN:E-024",
-        "floor": 1,
-        "floorName": "KN:E-0**",
-        "plan": 1,
-        "building": 1,
-        "coordinates" : {
-          "latitude" : "50.076685",
-          "longitude" : "14.417418"
-         },
-         "marker": {
-          "id": 0,
-          "angle": -90,
-          "type": "floor"
-        }
+  "id" : "12",
+  "type" : "stairs",
+  "floor": 1,
+  "floorName": "KN:E-3**",
+  "plan": 1,
+  "building": 1,
+  "coordinates" : {
+    "latitude" : "50.076748",
+    "longitude" : "14.417819"
+   },
+   "marker": {
+    "id": 0,
+    "angle": 180,
+    "type": "floor"
+  }
 } 
 +++++
 < 401
@@ -941,6 +945,32 @@ GET /map/node/marker/12
       "angle":0
     }
 }
++++++
+< 401
++++++
+< 404
+
+GET /map/node/marker/13
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "3",
+  "type" : "room",
+  "name" : "KN:E-024",
+  "floor": 1,
+  "floorName": "KN:E-0**",
+  "plan": 1,
+  "building": 1,
+  "coordinates" : {
+    "latitude" : "50.076685",
+    "longitude" : "14.417418"
+   },
+   "marker": {
+    "id": 13,
+    "angle": -90,
+    "type": "floor"
+  }
+} 
 +++++
 < 401
 +++++
