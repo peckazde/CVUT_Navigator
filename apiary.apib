@@ -644,7 +644,12 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076732",
           "longitude" : "14.417819"
-         }
+        },
+        "marker": {
+          "id": 0,
+          "angle": 180,
+          "type": "floor"
+        }
       },
       {
         "id" : "12",
@@ -656,12 +661,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417819"
-         },
-         "marker": {
-          "id": 0,
-          "angle": 180,
-          "type": "floor"
-        }
+         }
       }
     ]
   },
@@ -777,17 +777,17 @@ GET /map/node/marker/{markerId}
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "id" : "12",
-  "type" : "stairs",
+  "id" : "9",
+  "type" : "intersection",
   "floor": 1,
   "floorName": "KN:E-3**",
   "plan": 1,
   "building": 1,
   "coordinates" : {
-    "latitude" : "50.076748",
+    "latitude" : "50.076732",
     "longitude" : "14.417819"
-   },
-   "marker": {
+  },
+  "marker": {
     "id": 0,
     "angle": 180,
     "type": "floor"
