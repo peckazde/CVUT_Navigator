@@ -372,8 +372,12 @@ GET /map/poi/{id}
 < 404
 
 
+
+
 Informace o plánu budovy, včetně podrobných informací o všech jeho bodech.
-GET /map/plan/{id}
+
+
+GET /map/plan/2
 < 200
 < Content-Type: application/json; charset=utf-8
 {
@@ -742,6 +746,17 @@ GET /map/plan/1
 < 401
 +++++
 < 404
+
+Neexistujici plany
+GET /map/plan/{id}
+< 404
+{
+  "exception":{
+    "message": "Plan not found"
+  }
+}
+
+
 
 
 Informace o bodu.
