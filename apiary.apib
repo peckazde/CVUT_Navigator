@@ -14,14 +14,6 @@ POST /authorize
     "user": "johndoe",
     "password": "12345"
 }
-< 401
-< Content-Type: application/json; charset=utf-8
-{
-    "exception":{
-      "message": "invalid_client"
-    }
-}
-+++++
 < 200
 < Content-Type: application/json; charset=utf-8
 {
@@ -29,6 +21,14 @@ POST /authorize
     "token_type":"example",
     "expires_in":3600,
     "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA"
+}
++++++
+< 401
+< Content-Type: application/json; charset=utf-8
+{
+    "exception":{
+      "message": "invalid_client"
+    }
 }
 
 
