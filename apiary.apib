@@ -120,14 +120,6 @@ GET /kos/person/{username}
 
 Informace o rozvrhu osoby specifikovane {username}.
 GET /kos/person/{username}/timetable
-< 401
-< Content-Type: application/json; charset=utf-8
-{ 
-  "exception": {
-    "message": "unauthorized_client"
-  }
-}
-+++++
 < 200
 < Content-Type: application/json; charset=utf-8
 { 
@@ -278,6 +270,14 @@ GET /kos/person/{username}/timetable
       }
     }
   ]
+}
++++++
+< 401
+< Content-Type: application/json; charset=utf-8
+{ 
+  "exception": {
+    "message": "unauthorized_client"
+  }
 }
 +++++
 < 404
