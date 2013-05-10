@@ -352,7 +352,7 @@ GET /map/pois/{types}
 
 
 Informace o POI.
-GET /map/poi/{id}
+GET /map/poi/1
 < 200
 < Content-Type: application/json; charset=utf-8
 {
@@ -371,6 +371,14 @@ GET /map/poi/{id}
 +++++
 < 404
 
+GET /map/poi/{id}
+< 404
+< Content-Type: application/json; charset=utf-8
+{
+  "exception":{
+    "message": "POI not found"
+  }
+}
 
 
 
@@ -762,30 +770,13 @@ GET /map/plan/{id}
 
 Informace o bodu.
 GET /map/node/{id}
-< 200
+< 404
 < Content-Type: application/json; charset=utf-8
 {
-    "id" : "126",
-    "type" : "room",
-    "name" : "T9:155",
-    "floorName": "KN:E-3**",
-    "coordinates" : {
-        "latitude" : "50.1231",
-        "longitude" : "14.1231"
-        },
-    "floor" : 1,
-    "building": 1,
-    "plan": 1,
-    "marker" : {
-            "id": 1,
-            "angle": 0,
-            "type": "wall"
-        }
-} 
-+++++
-< 401
-+++++
-< 404
+  "exception":{
+    "message": "Node not found"
+  }
+}
 
 
 Informace o bodu pro marker id.
