@@ -9,10 +9,10 @@ Authorizace
 --
 Authorizace klienta k používání API. Používá se protokol OAuth2.
 POST /authorize
-> Content-Type: application/json
+> Content-Type: application/json; charset=utf-8
 {
     "user": "johndoe",
-    "password": "A3ddj3w"
+    "password": "12345"
 }
 < 200
 < Content-Type: application/json; charset=utf-8
@@ -26,9 +26,26 @@ POST /authorize
 < 401
 
 
+POST /authorize
+> Content-Type: application/json; charset=utf-8
+{
+    "user": "{user}",
+    "password": "{password}"
+}
+< 401
+< Content-Type: application/json; charset=utf-8
+{
+    "exception":{
+      "message": "invalid_client"
+    }
+}
++++++
+< 401
+
+
 Žádost o vygenerování nového access tokenu na základě refresh tokenu.
 POST /refreshToken
-> Content-Type: application/json
+> Content-Type: application/json; charset=utf-8
 {
     "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA"
 }
