@@ -1004,6 +1004,19 @@ GET /map/node/marker/13
 
 Vrací cestu mezi dvěma body formou seznamu identikátoru jednotlivých bodů cesty. Lze volat jen pro cestu mezi dvěma body v rámci jedné budovy.
 GET /map/path{?from,to}
+< 404
+< Content-Type: application/json; charset=utf-8
+{
+  "exception":{
+    "message":"Path between nodes not found."
+    }
+}
++++++
+< 400
++++++
+< 401
+
+GET /map/path?from=11&to=5
 < 200
 < Content-Type: application/json; charset=utf-8
 {
@@ -1013,7 +1026,6 @@ GET /map/path{?from,to}
 < 400
 +++++
 < 401
-
 
 GET /map/path?from=3&to=5
 < 200
