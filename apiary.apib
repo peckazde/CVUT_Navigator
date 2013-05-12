@@ -788,6 +788,51 @@ GET /map/node/{id}
   }
 }
 
+Informace o bodu.
+GET /map/node/1
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "1",
+  "type" : "room",
+  "name" : "KN:E-022",
+  "floor": 1,
+  "floorName": "KN:E-0**",
+  "plan": 1,
+  "building": 1,
+  "coordinates" : {
+    "latitude" : "50.076708",
+    "longitude" : "14.417670"
+   }
+}
++++++
+< 401
++++++
+< 404
+
+
+Informace o bodu.
+GET /map/node/2
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "id" : "2",
+  "type" : "room",
+  "name" : "KN:E-023",
+  "floor": 1,
+  "floorName": "KN:E-0**",
+  "plan": 1,
+  "building": 1,
+  "coordinates" : {
+    "latitude" : "50.076700",
+    "longitude" : "14.417570"
+   }
+}
++++++
+< 401
++++++
+< 404
+
 
 Informace o bodu pro marker id.
 GET /map/node/marker/{markerId}
