@@ -795,6 +795,18 @@ GET /map/node/{id}
 
 Informace o bodu pro marker id.
 GET /map/node/marker/{markerId}
+< 404
+< Content-Type: application/json; charset=utf-8
+{
+  "exception":{
+    "message": "Node not found"
+  }
+}
++++++
+< 400
+
+
+GET /map/node/marker/0
 < 200
 < Content-Type: application/json; charset=utf-8
 {
