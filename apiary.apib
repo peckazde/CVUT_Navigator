@@ -1068,6 +1068,7 @@ GET /map/path{?from,to}
 +++++
 < 401
 
+
 GET /map/path?from=11&to=5
 < 200
 < Content-Type: application/json; charset=utf-8
@@ -1078,6 +1079,67 @@ GET /map/path?from=11&to=5
 < 400
 +++++
 < 401
+
+
+GET /map/path?from=10&to=5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [10, 12, 9, 8, 7, 6, 5]
+}
++++++
+< 400
++++++
+< 401
+
+
+GET /map/path?from=12&to=5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [12, 9, 8, 7, 6, 5]
+}
++++++
+< 400
++++++
+< 401
+
+
+GET /map/path?from=8&to=5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [8, 7, 6, 5]
+}
++++++
+< 400
++++++
+< 401
+
+
+GET /map/path?from=7&to=5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [7, 6, 5]
+}
++++++
+< 400
++++++
+< 401
+
+
+GET /map/path?from=6&to=5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [6, 5]
+}
++++++
+< 400
++++++
+< 401
+
 
 GET /map/path?from=9&to=5
 < 200
@@ -1090,11 +1152,35 @@ GET /map/path?from=9&to=5
 +++++
 < 401
 
+
 GET /map/path?from=3&to=5
 < 200
 < Content-Type: application/json; charset=utf-8
 {
   "nodeIds" : [3, 2, 1, 9, 8, 7, 6, 5]
+}
++++++
+< 400
++++++
+< 401
+
+
+GET /map/path?from=2&to=5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [2, 1, 9, 8, 7, 6, 5]
+}
++++++
+< 400
++++++
+< 401
+
+GET /map/path?from=1&to=5
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [1, 9, 8, 7, 6, 5]
 }
 +++++
 < 400
