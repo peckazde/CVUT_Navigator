@@ -159,6 +159,41 @@ GET /kos/person/{username}/timetable
       }
     },
     {
+      "id" : "5",
+      "day": "monday",
+      "parity" : "both",
+      "time" : "11:30",
+      "length" : "90",
+      "type" : "lecture",
+      "room" : {
+        "id" : "5",
+        "type" : "room",
+        "name" : "KN:E-512",
+        "floor": 1,
+        "floorName": "KN:E-5**",
+        "plan": 1,
+        "building": 1,
+        "coordinates" : {
+          "latitude" : "50.076912",
+          "longitude" : "14.418286"
+         }
+       },
+      "course" : {
+        "id" : "13",
+        "code" : "BI-ZMA",
+        "name" : "Základy matematické analýzy",
+        "web" : "https://edux.fit.cvut.cz/courses/BI-ZMA/"
+      },
+      "teacher" : {
+        "id" : "13",
+        "username" : "cizekadam",
+        "name" : "Ing. Adam Čižek",
+        "email" : "cizek@fit.cvut.cz",
+        "type" : "teacher",
+        "roomName": "A-930"
+      }
+    },
+    {
       "id" : "4",
       "day": "wednesday",
       "parity" : "even",
@@ -186,7 +221,7 @@ GET /kos/person/{username}/timetable
       },
       "teacher" : {
         "id" : "13",
-        "username" : "hatlamatla",
+        "username" : "cizekadam",
         "name" : "Ing. Adam Čižek",
         "email" : "cizek@fit.cvut.cz",
         "type" : "teacher",
