@@ -709,12 +709,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076862",
           "longitude" : "14.418317"
-         },
-        "marker": {
-          "id": 4,
-          "angle": -90,
-          "type": "wall"
-        }
+         }
       },
       {
         "id" : "8",
@@ -726,12 +721,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076767",
           "longitude" : "14.418328"
-         },
-         "marker" : {
-            "id": 3,
-            "angle": 0,
-            "type": "wall"
-        }
+         }
       },
       {
         "id" : "9",
@@ -743,11 +733,6 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076732",
           "longitude" : "14.417819"
-        },
-        "marker": {
-          "id": 2,
-          "angle": 180,
-          "type": "floor"
         }
       },
       {
@@ -791,12 +776,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076748",
           "longitude" : "14.417807"
-         },
-         "marker": {
-              "id": 1,
-              "type": "wall",
-              "angle":0
-        }
+         }
       },
       {
         "id" : "11",
@@ -807,12 +787,7 @@ GET /map/plan/1
         "coordinates" : {
           "latitude" : "50.076641",
           "longitude" : "14.417818"
-         },
-      "marker": {
-              "id": 0,
-              "type": "floor",
-              "angle":0
-        }
+         }
       }
     ]
   },
@@ -895,7 +870,12 @@ GET /map/plan/3
               "name" : null,
               "room" : null,
               "toFloor" : null,
-              "type" : "intersection"
+              "type" : "intersection",
+              "marker": {
+                "id": 0,
+                "type": "floor",
+                "angle":0
+              }
             },
             { "building" : "3",
               "coordinates" : { "latitude" : 50.104899463008003,
@@ -1195,7 +1175,12 @@ GET /map/plan/3
               "name" : null,
               "room" : null,
               "toFloor" : null,
-              "type" : "elevator"
+              "type" : "elevator",
+              "marker": {
+                "id": 1,
+                "type": "wall",
+                "angle":-135
+              }
             },
             { "building" : "3",
               "coordinates" : { "latitude" : 50.105011714149001,
@@ -2090,7 +2075,12 @@ GET /map/plan/3
               "name" : "T9:348",
               "room" : "T9:348",
               "toFloor" : null,
-              "type" : "lecture"
+              "type" : "lecture",
+              "marker": {
+                "id": 4,
+                "type": "wall",
+                "angle":-45
+              }
             },
             { "building" : "3",
               "coordinates" : { "latitude" : 50.105294634453003,
@@ -2126,7 +2116,12 @@ GET /map/plan/3
               "name" : null,
               "room" : null,
               "toFloor" : null,
-              "type" : "intersection"
+              "type" : "intersection",
+              "marker": {
+                "id": 3,
+                "type": "wall",
+                "angle":135
+              }
             },
             { "building" : "3",
               "coordinates" : { "latitude" : 50.105252558621999,
@@ -2654,7 +2649,12 @@ GET /map/plan/3
               "name" : null,
               "room" : null,
               "toFloor" : null,
-              "type" : "intersection"
+              "type" : "intersection",
+              "marker": {
+                "id": 2,
+                "type": "wall",
+                "angle":45
+              }
             },
             { "building" : "3",
               "coordinates" : { "latitude" : 50.105040099454001,
