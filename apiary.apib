@@ -2820,21 +2820,22 @@ GET /map/node/marker/2
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "id" : "9",
-  "type" : "intersection",
-  "floor": 1,
-  "floorName": "KN:E-3**",
-  "plan": 1,
-  "building": 1,
-  "coordinates" : {
-    "latitude" : "50.076732",
-    "longitude" : "14.417819"
-  },
-  "marker": {
-    "id": 2,
-    "angle": 180,
-    "type": "floor"
-  }
+"building" : "3",
+              "coordinates" : { "latitude" : 50.105184437132003,
+                  "longitude" : 14.389764558137999
+                },
+              "floor" : "2",
+              "fromFloor" : null,
+              "id" : 333,
+              "name" : null,
+              "room" : null,
+              "toFloor" : null,
+              "type" : "intersection",
+              "marker": {
+                "id": 2,
+                "type": "wall",
+                "angle":45
+              }
 } 
 +++++
 < 401
@@ -2845,22 +2846,23 @@ GET /map/node/marker/2
 GET /map/node/marker/3
 < 200
 < Content-Type: application/json; charset=utf-8
-{
-  "id" : "8",
-  "floor" : 1,
-  "plan": 1,
-  "building": 1,
-        "type" : "intersection",
-        "coordinates" : {
-          "latitude" : "50.076767",
-          "longitude" : "14.418328"
-  },
-  "marker" : {
-            "id": 3,
-            "angle": 0,
-            "type": "wall"
-        }
-}
+{ "building" : "3",
+              "coordinates" : { "latitude" : 50.105255582632999,
+                  "longitude" : 14.389782550631001
+                },
+              "floor" : "2",
+              "fromFloor" : null,
+              "id" : 75,
+              "name" : null,
+              "room" : null,
+              "toFloor" : null,
+              "type" : "intersection",
+              "marker": {
+                "id": 3,
+                "type": "wall",
+                "angle":135
+              }
+            }
 +++++
 < 401
 +++++
@@ -2871,20 +2873,22 @@ GET /map/node/marker/4
 < 200
 < Content-Type: application/json; charset=utf-8
 {
-  "id" : "7",
-  "floor" : 1,
-  "plan": 1,
-  "building": 1,
-  "type" : "intersection",
-  "coordinates" : {
-    "latitude" : "50.076862",
-    "longitude" : "14.418317"
-   },
-  "marker": {
-          "id": 4,
-          "angle": -90,
-          "type": "wall"
-        }
+  "building" : "3",
+              "coordinates" : { "latitude" : 50.105315780095999,
+                  "longitude" : 14.389742240309999
+                },
+              "floor" : "2",
+              "fromFloor" : null,
+              "id" : 133,
+              "name" : "T9:348",
+              "room" : "T9:348",
+              "toFloor" : null,
+              "type" : "lecture",
+              "marker": {
+                "id": 4,
+                "type": "wall",
+                "angle":-45
+              }
 }
 +++++
 < 401
@@ -2921,20 +2925,22 @@ GET /map/node/marker/0
 < 200
 < Content-Type: application/json; charset=utf-8
  {
-    "id" : "11",
-    "type" : "entrance",
-    "plan": 1,
-    "floor" : 0,
-    "building": 1,
-    "coordinates" : {
-      "latitude" : "50.076641",
-      "longitude" : "14.417818"
-     },
-  "marker": {
-          "id": 0,
-          "type": "floor",
-          "angle":0
-    }
+    "building" : "3",
+              "coordinates" : { "latitude" : 50.105028487285999,
+                  "longitude" : 14.389604106545001
+                },
+              "floor" : "0",
+              "fromFloor" : null,
+              "id" : 655,
+              "name" : null,
+              "room" : null,
+              "toFloor" : null,
+              "type" : "intersection",
+              "marker": {
+                "id": 0,
+                "type": "floor",
+                "angle":0
+              }
 }
 +++++
 < 401
@@ -2946,20 +2952,22 @@ GET /map/node/marker/1
 < 200
 < Content-Type: application/json; charset=utf-8
   {
-    "id" : "10",
-    "type" : "stairs",
-    "plan": 1,
-    "floor" : 0,
-    "building": 1,
-    "coordinates" : {
-      "latitude" : "50.076748",
-      "longitude" : "14.417807"
-     },
-     "marker": {
-          "id": 1,
-          "type": "wall",
-          "angle":0
-    }
+    "building" : "3",
+              "coordinates" : { "latitude" : 50.10512998614,
+                  "longitude" : 14.389815330505
+                },
+              "floor" : "0",
+              "fromFloor" : null,
+              "id" : 678,
+              "name" : null,
+              "room" : null,
+              "toFloor" : null,
+              "type" : "elevator",
+              "marker": {
+                "id": 1,
+                "type": "wall",
+                "angle":-135
+              }
   }
 +++++
 < 401
