@@ -3157,6 +3157,17 @@ GET /map/path?from=1&to=5
 +++++
 < 401
 
+Cesta v nove budove
+GET /map/path?from=652&to=133
+< 200
+< Content-Type: application/json; charset=utf-8
+{
+  "nodeIds" : [652,698,655,658,679,678,726,337,333,37,75,73,133]
+}
++++++
+< 400
++++++
+< 401
 
 Vrací dlaždici mapového podkladu podle specifikovaného umístění.
 GET /map/{idBudovy}/{floor}/{zoom}/{x}/{y}
