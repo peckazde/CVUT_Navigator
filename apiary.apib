@@ -1811,7 +1811,12 @@ GET /map/plan/3
               "name" : null,
               "room" : null,
               "toFloor" : null,
-              "type" : "intersection"
+              "type" : "intersection",
+              "marker": {
+                "id": 2,
+                "type": "wall",
+                "angle":135
+              }
             },
             { "building" : "3",
               "coordinates" : { "latitude" : 50.104905914230002,
@@ -2120,7 +2125,7 @@ GET /map/plan/3
               "marker": {
                 "id": 3,
                 "type": "wall",
-                "angle":-135
+                "angle":45
               }
             },
             { "building" : "3",
@@ -2649,12 +2654,7 @@ GET /map/plan/3
               "name" : null,
               "room" : null,
               "toFloor" : null,
-              "type" : "intersection",
-              "marker": {
-                "id": 2,
-                "type": "wall",
-                "angle":135
-              }
+              "type" : "intersection"
             },
             { "building" : "3",
               "coordinates" : { "latitude" : 50.105040099454001,
@@ -2821,12 +2821,12 @@ GET /map/node/marker/2
 < Content-Type: application/json; charset=utf-8
 {
 "building" : "3",
-              "coordinates" : { "latitude" : 50.105184437132003,
-                  "longitude" : 14.389764558137999
+              "coordinates" : { "latitude" : 50.105231054701001,
+                  "longitude" : 14.389826059341001
                 },
               "floor" : "2",
               "fromFloor" : null,
-              "id" : 333,
+              "id" : 37,
               "name" : null,
               "room" : null,
               "toFloor" : null,
@@ -2860,7 +2860,7 @@ GET /map/node/marker/3
               "marker": {
                 "id": 3,
                 "type": "wall",
-                "angle":-135
+                "angle":45
               }
             }
 +++++
